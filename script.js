@@ -50,10 +50,15 @@ const loadCatagoryNews = async (catagoryid) => {
 // displaying catogory news
 
 const displayCatagoryNews = (catagoryNewsArray) => {
-  console.log(catagoryNewsArray);
+  const sortArray = catagoryNewsArray.sort(
+    ({ total_view: a }, { total_view: b }) => b - a
+  );
+
   //  looping through array
-  catagoryNewsArray.forEach((news) => {
-    console.log(news);
+  sortArray.forEach((news) => {
+    // destructuring news
+    const { thumbnail_url, title, author, details, total_view } = news;
+    const { img, name } = author;
   });
 };
 loadCatagory();

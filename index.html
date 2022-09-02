@@ -7,7 +7,15 @@
     <title>News Now</title>
     <!-- favicon -->
     <link rel="shortcut icon" href="/favicon/favicon.png" type="image/x-icon" />
-    <!--  -->
+    <!-- fontAwesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- tailwind cdn -->
     <link
       href="https://cdn.jsdelivr.net/npm/daisyui@2.24.0/dist/full.css"
       rel="stylesheet"
@@ -66,21 +74,47 @@
         <div>
           <!--  -->
           <div
-            class="card lg:card-side bg-base-100 shadow-xl border-slate-600 border-2 h-full lg:h-72"
+            class="card lg:card-side bg-base-100 shadow-xl border-slate-600 border-2 h-full"
           >
             <figure>
-              <img
-                src="https://placeimg.com/400/400/arch"
-                alt="Album"
-                class="w-full"
-              />
+              <img src="" alt="Album" class="w-full" />
             </figure>
             <div class="card-body">
               <h2 class="card-title">New album is released!</h2>
               <p>Click the button to listen on Spotiwhy app.</p>
-              <div class="card-actions justify-end">
-                <button class="btn btn-primary">Listen</button>
+              <div
+                class="card-footer flex justify-between font-semibold text-slate-700"
+              >
+                <!-- author info -->
+                <div class="author flex items-center">
+                  <!-- author img -->
+                  <img
+                    src="/favicon/favicon.png"
+                    alt=""
+                    class="mask mask-circle h-10"
+                  />
+                  <!-- author name and publised data -->
+                  <div class="author-name">
+                    <h6 class="text-xs">auhor name</h6>
+                    <h6 class="text-xs">published</h6>
+                  </div>
+                </div>
+
+                <!-- view news -->
+                <div class="viewNews">
+                  <i class="fa-solid fa-eye"></i>
+                  <small>kk</small>
+                </div>
+                <!-- rating -->
+                <div class="ratings">
+                  <small>Ratings: </small>
+                </div>
+
+                <div class="card-actions justify-end">
+                  <button class="btn btn-primary">Listen</button>
+                </div>
               </div>
+              <!-- card btn -->
             </div>
           </div>
           <!--  -->
