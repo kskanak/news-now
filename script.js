@@ -54,8 +54,6 @@ loadCatagoryNews("02");
 // displaying catogory news
 
 const displayCatagoryNews = (catagoryNewsArray) => {
-  console.log(catagoryNewsArray.length);
-
   // news result setting
   if (catagoryNewsArray.length === 0 || catagoryNewsArray === null) {
     document.getElementById("result").innerText = "News Not Found";
@@ -97,7 +95,7 @@ const displayCatagoryNews = (catagoryNewsArray) => {
     newsDiv.innerHTML = `
 
     <div
-    class="card lg:card-side bg-base-100 shadow-xl border-slate-600 border-2"
+    class="card lg:card-side bg-base-100 shadow-xl border-slate-600 border-2 text-slate-700"
   >
     <figure>
       <img src="${thumbnail_url ? thumbnail_url : "N/A"}" alt="news_thumbnail"/>
@@ -106,7 +104,7 @@ const displayCatagoryNews = (catagoryNewsArray) => {
       <h2 class="card-title">${title ? title : "N/A"}</h2>
       <p>${details ? details.slice(0, 300) : "N/A"} ....</p>
       <div
-        class="card-footer flex justify-between font-semibold text-slate-700"
+        class="card-footer flex justify-between font-semibold items-center"
       >
      
         <div class="author flex items-center mr-3">
@@ -126,7 +124,9 @@ const displayCatagoryNews = (catagoryNewsArray) => {
        
         <div class="viewNews">
           <i class="fa-solid fa-eye"></i>
-          <small>${total_view ? total_view : N / A}</small>
+          <small>${
+            total_view ? total_view : total_view === null ? "0" : ""
+          }</small>
         </div>
 
         
@@ -157,10 +157,50 @@ const loadDetails = async (deitalsId) => {
     const res = await fetch(url);
     const data = await res.json();
     // displayDetails(data.data[0]);
-    console.log(data.data[0]);
+    displayDetails(data.data[0]);
   } catch (error) {
     console.log(error);
   }
+};
+
+const displayDetails = (newsDeitals) => {
+  // destructuring
+  const { image_url, title, others_info, details, rating, total_view } =
+    newsDeitals;
+  const { is_trending } = others_info;
+  const { badge } = rating;
+
+  //  details container
+  const detailsContainer = document.getElementById("detailsContainer");
+  detailsContainer.innerHTML = `
+
+  <img src="${image_url}" alt="" />
+
+  <div class="details-content mt-10">
+    <h3 class="font-bold text-xl text-purple-500">Title : ${title}</h3>
+  
+    <h3 class="font-semibold text-lg text-purple-500">
+      News : ${is_trending ? "Trending" : "Not Trending"}
+    </h3>
+  
+    <h3 class="font-semibold text-lg text-purple-500">
+      Review : ${badge}
+    </h3>
+  
+    <h3 class="font-semibold text-lg text-purple-500">
+      Total_Read : ${total_view ? total_view : total_view === null ? "0" : ""}
+    </h3>
+  
+    <p class="py-4 text-slate-700 text-sky-500">
+      <span class="text-purple-500 text-lg font-semibold"
+        >Details</span
+      >
+      : ${details}
+    </p>
+  
+  </div>
+
+  `;
 };
 
 loadCatagory("s");
