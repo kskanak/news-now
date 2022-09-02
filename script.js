@@ -50,7 +50,7 @@ const loadCatagoryNews = async (catagoryid) => {
     console.log(error);
   }
 };
-
+loadCatagoryNews("02");
 // displaying catogory news
 
 const displayCatagoryNews = (catagoryNewsArray) => {

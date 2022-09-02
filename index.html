@@ -43,7 +43,7 @@
       </div>
     </header>
     <main>
-      <!-- catagory section -->
+      <!-- --------------------------------------------------------catagory section ---------------------------->
       <section class="my-5 catagory-section">
         <ul
           class="sm:flex justify-between px-2 text-slate-500 font-semibold"
@@ -51,14 +51,14 @@
         ></ul>
       </section>
 
-      <!-- result found section -->
+      <!-- ---------------------------------------------------result found section ----------------------->
       <section class="resultFound-section my-10">
         <h2 class="text-2xl font-semibold text-purple-600">
           Catagory News : <span id="result"></span>
         </h2>
       </section>
 
-      <!-- News title section -->
+      <!-- --------------------------------------------------News title section ---------------->
       <section class="Newstitle-section">
         <!-- news title -->
         <div
@@ -68,16 +68,41 @@
         </div>
       </section>
 
-      <!-- preload-section -->
+      <!----------------------------------------------- preload-section ------------------------------------->
       <section class="text-center mt-10 hidden" id="preloader">
         <progress class="progress w-96"></progress>
       </section>
 
-      <!-- news card section -->
+      <!-- ----------------------------------------------news card section ----------------------------------------->
       <section class="card-section my-10 grid gap-5" id="newsContainer">
         <!-- card -->
 
         <!-- card -->
+      </section>
+
+      <!-- ------------------------------------------ newsDetails section ------------------------------->
+      <section class="details-section">
+        <!-- modal main  -->
+        <input type="checkbox" id="my-modal" class="modal-toggle" />
+        <div class="modal">
+          <div class="modal-box">
+            <label
+              for="my-modal"
+              class="btn btn-sm btn-circle absolute right-2 top-2"
+              >✕</label
+            >
+            <h3 class="font-bold text-lg">
+              Congratulations random Internet user!
+            </h3>
+            <p class="py-4">
+              You've been selected for a chance to get one year of subscription
+              to use Wikipedia for free!
+            </p>
+            <div class="modal-action">
+              <label for="my-modal" class="btn">Yay!</label>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
     <!-- main js -->
