@@ -35,8 +35,25 @@ const displayCatagory = (catagoryArray) => {
   });
 };
 
-const loadCatagoryNews = (catagoryid) => {
-  console.log(catagoryid);
+//  loading catogory news by catagory id
+const loadCatagoryNews = async (catagoryid) => {
+  const url = `https://openapi.programming-hero.com/api/news/category/${catagoryid}`;
+  try {
+    const res = await fetch(url);
+    const data = await res.json();
+    displayCatagoryNews(data.data);
+  } catch (error) {
+    console.log(error);
+  }
 };
 
+// displaying catogory news
+
+const displayCatagoryNews = (catagoryNewsArray) => {
+  console.log(catagoryNewsArray);
+  //  looping through array
+  catagoryNewsArray.forEach((news) => {
+    console.log(news);
+  });
+};
 loadCatagory();

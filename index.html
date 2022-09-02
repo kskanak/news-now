@@ -15,12 +15,12 @@
     />
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body class="px-16">
+  <body class="px-16 py-8">
     <header class="border-b-2 border-purple-700">
       <div class="bg-base-100 text-center md:text-justify md:flex">
         <div class="flex-1">
           <a class="normal-case text-xl sm:text-3xl font-bold text-purple-700"
-            >News Now</a
+            >News <span class="text-yellow-400">Now</span></a
           >
         </div>
         <div class="flex-none">
@@ -66,10 +66,14 @@
         <div>
           <!--  -->
           <div
-            class="card lg:card-side bg-base-100 shadow-xl border-slate-600 border-2"
+            class="card lg:card-side bg-base-100 shadow-xl border-slate-600 border-2 h-full lg:h-72"
           >
             <figure>
-              <img src="https://placeimg.com/400/400/arch" alt="Album" />
+              <img
+                src="https://placeimg.com/400/400/arch"
+                alt="Album"
+                class="w-full"
+              />
             </figure>
             <div class="card-body">
               <h2 class="card-title">New album is released!</h2>
