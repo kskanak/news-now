@@ -56,7 +56,7 @@ loadCatagoryNews("02");
 const displayCatagoryNews = (catagoryNewsArray) => {
   // news result setting
   if (catagoryNewsArray.length === 0 || catagoryNewsArray === null) {
-    document.getElementById("result").innerText = "News Not Found";
+    document.getElementById("result").innerText = "No News  Available";
     document.getElementById("preloader").classList.add("hidden");
   } else {
     document.getElementById("result").innerText = `${catagoryNewsArray.length}`;
@@ -98,13 +98,15 @@ const displayCatagoryNews = (catagoryNewsArray) => {
     class="card lg:card-side bg-base-100 shadow-xl border-slate-600 border-2 text-slate-700"
   >
     <figure>
-      <img src="${thumbnail_url ? thumbnail_url : "N/A"}" alt="news_thumbnail"/>
+      <img src="${
+        thumbnail_url ? thumbnail_url : "N/A"
+      }" alt="news_thumbnail" class= "w-full object-cover lg:w-72 "/>
     </figure>
     <div class="card-body ">
       <h2 class="card-title">${title ? title : "N/A"}</h2>
       <p>${details ? details.slice(0, 300) : "N/A"} ....</p>
       <div
-        class="card-footer flex justify-between font-semibold items-center"
+        class="card-footer sm:flex justify-between font-semibold items-center text-purple-700"
       >
      
         <div class="author flex items-center mr-3">
@@ -122,19 +124,23 @@ const displayCatagoryNews = (catagoryNewsArray) => {
         </div>
 
        
-        <div class="viewNews">
+        <div class="viewNews my-4 flex">
+          <div>
           <i class="fa-solid fa-eye"></i>
           <small>${
             total_view ? total_view : total_view === null ? "0" : ""
           }</small>
+          </div>
+
+          <div class="ratings ml-16 md:ml-28">
+          <small>Ratings: ${number ? number : "N/A"} </small>
+           </div>
         </div>
 
         
-        <div class="ratings">
-          <small>Ratings: ${number ? number : "N/A"} </small>
-        </div>
+        
 
-        <div class="card-actions justify-end">
+        <div class="card-actions justify-center md:justify-end mt-2 sm:mt-0">
      
           <label for="my-modal" class="btn modal-button bg-purple-800 text-white" onclick = "loadDetails('${_id}')"">News Details</label>
         </div>
