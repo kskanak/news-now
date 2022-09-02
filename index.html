@@ -16,6 +16,82 @@
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body class="px-16">
+    <header class="border-b-2 border-purple-700">
+      <div class="navbar bg-base-100">
+        <div class="flex-1">
+          <a class="normal-case text-3xl font-bold text-purple-700">News Now</a>
+        </div>
+        <div class="flex-none">
+          <ul
+            class="menu menu-horizontal p-0 text-lg font-semibold text-purple-600"
+          >
+            <li><a>News</a></li>
+
+            <li><a>Blogs</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <main>
+      <!-- catagory section -->
+      <section class="my-5 catagory-section">
+        <ul class="md:flex justify-evenly text-slate-500 font-semibold">
+          <li>Item 1</li>
+          <li>Item 1</li>
+          <li>Item 1</li>
+          <li>Item 1</li>
+          <li>Item 1</li>
+          <li>Item 1</li>
+          <li>Item 1</li>
+          <li>Item 1</li>
+          <li>Item 1</li>
+          <li>Item 1</li>
+          <li>Item 1</li>
+        </ul>
+      </section>
+
+      <!-- result found section -->
+      <section class="resultFound-section my-10">
+        <h2 class="text-2xl font-semibold text-purple-600">
+          Catagory News : <span id="result">4</span>
+        </h2>
+      </section>
+
+      <!-- News section -->
+      <section class="Newstitle-section">
+        <!-- news title -->
+        <div
+          class="News-title text-3xl font-semibold text-center text-purple-800 underline"
+        >
+          News
+        </div>
+      </section>
+
+      <!-- news card section -->
+      <section class="card-section my-10 grid gap-5">
+        <!-- card -->
+        <div>
+          <!--  -->
+          <div
+            class="card lg:card-side bg-base-100 shadow-xl border-slate-600 border-2"
+          >
+            <figure>
+              <img src="https://placeimg.com/400/400/arch" alt="Album" />
+            </figure>
+            <div class="card-body">
+              <h2 class="card-title">New album is released!</h2>
+              <p>Click the button to listen on Spotiwhy app.</p>
+              <div class="card-actions justify-end">
+                <button class="btn btn-primary">Listen</button>
+              </div>
+            </div>
+          </div>
+          <!--  -->
+        </div>
+
+        <!-- card -->
+      </section>
+    </main>
     <!-- main js -->
     <script src="/script.js"></script>
   </body>
