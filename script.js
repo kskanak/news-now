@@ -37,7 +37,11 @@ const displayCatagory = (catagoryArray) => {
 
 //  loading catogory news by catagory id
 const loadCatagoryNews = async (catagoryid) => {
+  // setting preload
+  document.getElementById("preloader").classList.remove("hidden");
+
   const url = `https://openapi.programming-hero.com/api/news/category/${catagoryid}`;
+
   try {
     const res = await fetch(url);
     const data = await res.json();
@@ -50,6 +54,17 @@ const loadCatagoryNews = async (catagoryid) => {
 // displaying catogory news
 
 const displayCatagoryNews = (catagoryNewsArray) => {
+  console.log(catagoryNewsArray.length);
+
+  // news result setting
+  if (catagoryNewsArray.length === 0 || catagoryNewsArray === null) {
+    document.getElementById("result").innerText = "News Not Found";
+    document.getElementById("preloader").classList.add("hidden");
+  } else {
+    document.getElementById("result").innerText = `${catagoryNewsArray.length}`;
+    document.getElementById("preloader").classList.add("hidden");
+  }
+
   // sorting by newsView count
   const sortArray = catagoryNewsArray.sort(
     ({ total_view: a }, { total_view: b }) => b - a
@@ -148,4 +163,4 @@ const loadDetails = async (deitalsId) => {
   }
 };
 
-loadCatagory("");
+loadCatagory("s");
