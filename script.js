@@ -142,7 +142,7 @@ const displayCatagoryNews = (catagoryNewsArray) => {
 
         <div class="card-actions justify-center md:justify-end mt-2 sm:mt-0">
      
-          <label for="my-modal" class="btn modal-button bg-purple-800 text-white" onclick = "loadDetails('${_id}')"">News Details</label>
+          <label for="my-modal" class="btn modal-button bg-purple-800 text-white" onclick = "loadDetails('${_id}')""> Detail News</label>
         </div>
       </div>
       <!-- card btn -->

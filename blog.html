@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>News Now</title>
+    <!-- favicon -->
+    <link rel="shortcut icon" href="/favicon/favicon.png" type="image/x-icon" />
+    <!-- fontAwesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- tailwind cdn -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@2.24.0/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="px-16 py-8">
+    <header class="border-b-2 border-purple-700">
+      <div class="bg-base-100 text-center md:text-justify md:flex">
+        <div class="flex-1">
+          <a class="normal-case text-xl sm:text-3xl font-bold text-purple-700"
+            >News <span class="text-yellow-400">Now</span></a
+          >
+        </div>
+        <div class="flex-none">
+          <ul
+            class="menu menu-horizontal p-0 text-lg font-semibold text-purple-600"
+          >
+            <li><a href="index.html">News</a></li>
+
+            <li><a href="blog.html">Blogs</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <main>
+      <!-- --------------------------------------------------Blog title section ---------------->
+      <section class="Newstitle-section my-10">
+        <!-- news title -->
+        <div
+          class="News-title text-5xl font-semibold text-center text-purple-800 underline"
+        >
+          Blogs
+        </div>
+      </section>
+
+      <!-- ----------------------------------------------blog card section ----------------------------------------->
+      <section
+        class="blogs-section mt-10 mb-20 grid gap-5 md:w-3/5 md:mx-auto"
+        id="blogs"
+      >
+        <!-- blog 1-->
+        <div class="collapse">
+          <input type="checkbox" class="peer" />
+          <div
+            class="collapse-title bg-purple-500 text-primary-content peer-checked:bg-secondary peer-checked:text-secondary-content"
+          >
+            Difference between var, let and const ??
+          </div>
+          <div
+            class="collapse-content bg-yellow-200 text-slate-600 peer-checked:bg-secondary peer-checked:text-secondary-content"
+          >
+            <p>
+              var is function scope, let is block scope and const is block scope
+              also. var is mutable but let and const is immutable, means Can
+              redeclare same variable name with var but cant redeclare same name
+              with let and const. property value cannot change during const its
+              fixed, can change n reset with let and var.
+            </p>
+          </div>
+        </div>
+        <!-- blog -->
+
+        <!-- blog 2-->
+        <div class="collapse">
+          <input type="checkbox" class="peer2" />
+          <div
+            class="collapse-title bg-yellow-300 text-purple-800 peer-checked:bg-secondary peer-checked:text-secondary-content"
+          >
+            Difference Arrow function and Normal Function ??
+          </div>
+          <div
+            class="collapse-content bg-purple-200 text-slate-600 peer-checked:bg-secondary peer-checked:text-secondary-content"
+          >
+            <p>
+              Regular function declaration requre to write function to declare,
+              where Arrow function doesn't requre to write Arrow. In regular
+              function, have to use return keyword to return any value. If dont
+              return anything then the function will return undefined. If the
+              arrow function contains one expression, can omit the curly braces,
+              and then the expression will be implicitly returned.
+            </p>
+          </div>
+        </div>
+        <!-- blog -->
+
+        <!-- blog 3-->
+        <div class="collapse">
+          <input type="checkbox" class="peer" />
+          <div
+            class="collapse-title bg-purple-500 text-white peer-checked:bg-secondary peer-checked:text-secondary-content"
+          >
+            Some Idea about map, forEach, filter, and find.
+          </div>
+          <div
+            class="collapse-content bg-yellow-200 text-slate-600 peer-checked:bg-secondary peer-checked:text-secondary-content"
+          >
+            <p>
+              Array map uses for looping through array, after the completing
+              operation the map return the value in a array. Like array map,
+              forEach is also uses for looping through but it doesnt return any
+              value. Applying condion in a array, after fulfilling the
+              condition, array filter return all the value that match the
+              applied condition, just like array filter, array find also work on
+              condition but unlike filter it doesnt return all the value that
+              matched the condition, it only return the first value that match
+              the condition.
+            </p>
+          </div>
+        </div>
+        <!-- blog -->
+
+        <!-- blog 4-->
+        <div class="collapse">
+          <input type="checkbox" class="peer" />
+          <div
+            class="collapse-title bg-yellow-300 text-purple-800 peer-checked:bg-secondary peer-checked:text-secondary-content"
+          >
+            Uses of Templete Strings...
+          </div>
+          <div
+            class="collapse-content bg-purple-200 text-slate-600 peer-checked:bg-secondary peer-checked:text-secondary-content"
+          >
+            <p>
+              The uses of Templete String is can easily declare variable inside
+              templete string. then, can easily concat string inside templete
+              string. Templete string helps to create dynamic content using
+              literals sign.
+            </p>
+          </div>
+        </div>
+        <!-- blog -->
+      </section>
+    </main>
+    <!-- main js -->
+    <script src="/script.js"></script>
+    <script src="/blog.js"></script>
+  </body>
+</html>
