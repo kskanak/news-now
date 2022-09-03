@@ -27,7 +27,7 @@ const displayCatagory = (catagoryArray) => {
     //  writing inneHTML
     li.innerHTML = `
     
-    <li onclick = "loadCatagoryNews('${category_id}')"><a class="link link-hover" href=" # ">${category_name}</a></li>
+    <li onclick = "loadCatagoryNews('${category_id}', '${category_name}')"><a class="link link-hover" href=" # ">${category_name}</a></li>
     
     `;
     // appending ul to container
@@ -36,7 +36,7 @@ const displayCatagory = (catagoryArray) => {
 };
 
 //  loading catogory news by catagory id
-const loadCatagoryNews = async (catagoryid) => {
+const loadCatagoryNews = async (catagoryid, catagoryName) => {
   // setting preload
   document.getElementById("preloader").classList.remove("hidden");
 
@@ -45,7 +45,7 @@ const loadCatagoryNews = async (catagoryid) => {
   try {
     const res = await fetch(url);
     const data = await res.json();
-    displayCatagoryNews(data.data);
+    displayCatagoryNews(data.data, catagoryName);
   } catch (error) {
     console.log(error);
   }
@@ -53,13 +53,17 @@ const loadCatagoryNews = async (catagoryid) => {
 loadCatagoryNews("02");
 // displaying catogory news
 
-const displayCatagoryNews = (catagoryNewsArray) => {
+const displayCatagoryNews = (catagoryNewsArray, catagoryName) => {
   // news result setting
   if (catagoryNewsArray.length === 0 || catagoryNewsArray === null) {
-    document.getElementById("result").innerText = "No News  Available";
+    document.getElementById(
+      "result"
+    ).innerText = `No News  Available ${catagoryName}`;
     document.getElementById("preloader").classList.add("hidden");
   } else {
-    document.getElementById("result").innerText = `${catagoryNewsArray.length}`;
+    document.getElementById("result").innerText = `${
+      catagoryNewsArray.length
+    } Items for Catagory ${catagoryName ? catagoryName : ""}`;
     document.getElementById("preloader").classList.add("hidden");
   }
 
@@ -95,12 +99,12 @@ const displayCatagoryNews = (catagoryNewsArray) => {
     newsDiv.innerHTML = `
 
     <div
-    class="card lg:card-side bg-base-100 shadow-xl border-slate-600 border-2 text-slate-700"
+    class="card lg:card-side bg-base-100 shadow-xl border-slate-200 border-2 text-slate-700"
   >
     <figure>
       <img src="${
         thumbnail_url ? thumbnail_url : "N/A"
-      }" alt="news_thumbnail" class= "w-full object-cover lg:w-72 "/>
+      }" alt="news_thumbnail" class= "w-full lg:w-72 p-4"/>
     </figure>
     <div class="card-body ">
       <h2 class="card-title">${title ? title : "N/A"}</h2>
@@ -127,9 +131,8 @@ const displayCatagoryNews = (catagoryNewsArray) => {
         <div class="viewNews my-4 flex">
           <div>
           <i class="fa-solid fa-eye"></i>
-          <small>${
-            total_view ? total_view : total_view === null ? "0" : ""
-          }</small>
+          <small>
+          ${total_view ? total_view : "N/A"}</small>
           </div>
 
           <div class="ratings ml-16 md:ml-28">
@@ -171,19 +174,23 @@ const loadDetails = async (deitalsId) => {
 
 const displayDetails = (newsDeitals) => {
   // destructuring
-  const { image_url, title, others_info, details, rating, total_view } =
+  const { image_url, title, others_info, details, rating, total_view, author } =
     newsDeitals;
   const { is_trending } = others_info;
   const { badge } = rating;
+  const { name } = author;
 
   //  details container
   const detailsContainer = document.getElementById("detailsContainer");
   detailsContainer.innerHTML = `
 
-  <img src="${image_url}" alt="" />
+  <img src="${image_url}" alt="" class= "h-full"/>
 
   <div class="details-content mt-10">
     <h3 class="font-bold text-xl text-purple-500">Title : ${title}</h3>
+    <h3 class="font-semibold text-lg text-purple-500">Author : ${
+      name ? name : "N/A"
+    }</h3>
   
     <h3 class="font-semibold text-lg text-purple-500">
       News : ${is_trending ? "Trending" : "Not Trending"}
@@ -194,7 +201,7 @@ const displayDetails = (newsDeitals) => {
     </h3>
   
     <h3 class="font-semibold text-lg text-purple-500">
-      Total_Read : ${total_view ? total_view : total_view === null ? "0" : ""}
+      Total_View : ${total_view ? total_view : "N/A"}
     </h3>
   
     <p class="py-4 text-slate-700 text-sky-500">
