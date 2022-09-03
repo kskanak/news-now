@@ -56,9 +56,7 @@ loadCatagoryNews("02");
 const displayCatagoryNews = (catagoryNewsArray, catagoryName) => {
   // news result setting
   if (catagoryNewsArray.length === 0 || catagoryNewsArray === null) {
-    document.getElementById(
-      "result"
-    ).innerText = `No News  Available ${catagoryName}`;
+    document.getElementById("result").innerText = `No News  Available`;
     document.getElementById("preloader").classList.add("hidden");
   } else {
     document.getElementById("result").innerText = `${
